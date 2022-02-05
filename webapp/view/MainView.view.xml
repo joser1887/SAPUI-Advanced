@@ -3,13 +3,25 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
->
+    xmlns:core="sap.ui.core">
     <Shell id="shell">
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
-                        <Text text="Hellow Work"/>
+                        <HBox id="IDHBox">
+                            <Label id="labelEmployee" labelFor="inputEmployee" text="{i18n>labelEmpleado}" class="sapUiSmallMargin"/>
+                            <Input id="inputEmployee" maxLength="6" width="200px" class="sapUiSmallMarginEnd" liveChange="onValidate"/>
+                            <Label id="labelCountry" labelFor="slCountry" text="{i18n>labelConutry}" class="sapUiSmallMargin" visible="false"/>
+                            <Select id="slCountry" forceSelection="false" visible="false">
+                                <items>
+                                    <core:Item id="IDGenItem1" key="US" text="{i18n>labelConutryUS}"/>
+                                    <core:Item id="IDGenItem2" key="UK" text="{i18n>labelConutryUK}"/>
+                                    <core:Item id="IDGenItem3" key="ES" text="{i18n>labelConutryES}"/>
+                                    <core:Item id="IDGenItem4" key="CO" text="{i18n>labelConutryCO}"/>
+                                </items>
+                            </Select>
+                        </HBox>
                     </content>
                 </Page>
             </pages>
